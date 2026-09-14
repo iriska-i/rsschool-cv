@@ -73,3 +73,10 @@ class SolverBFS(BazowySolver):
 - Music
 - Table tennis
 - Programming
+
+## Experience & projects
+
+**rsschool-cv** — this CV itself: written in Markdown, then coded by hand in
+semantic HTML/CSS and deployed with GitHub Pages as part of the RS School
+course.
+[github.com/iriska-i/rsschool-cv](https://github.com/iriska-i/rsschool-cv)
