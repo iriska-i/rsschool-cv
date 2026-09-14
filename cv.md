@@ -58,3 +58,18 @@ class SolverBFS(BazowySolver):
 
 - CCNA: Introduction to Networks / Switching, Routing, and Wireless Essentials — Cisco Networking Academy
 - NDG Linux Essentials / Linux Unhatched — Cisco Networking Academy & Network Development Group
+
+## Languages
+
+- Ukrainian — native
+- Polish — intermediate (B1)
+- English — basic (A2)
+- Russian — advanced (C1)
+
+## Interests
+
+- Literature
+- Traveling
+- Music
+- Table tennis
+- Programming
