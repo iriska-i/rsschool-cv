@@ -1,0 +1,242 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@500;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap');
+
+:root {
+  --ink: #17222b;
+  --ink-line: #2c3a46;
+  --paper: #f5f6f4;
+  --paper-dim: #e7eae6;
+  --paper-line: #d8dbd6;
+  --clay: #b24c2b;
+  --teal: #3e7c6b;
+  --font-display: 'Source Serif 4', Georgia, 'Times New Roman', serif;
+  --font-body: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+  --max-width: 1100px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 17px;
+  line-height: 1.55;
+}
+
+a {
+  color: var(--clay);
+}
+
+a:hover,
+a:focus-visible {
+  color: var(--teal);
+}
+
+.page {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  min-height: 100vh;
+}
+
+.sidebar {
+  background: var(--ink);
+  color: var(--paper);
+  padding: 48px 32px;
+}
+
+.identity {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 40px;
+}
+
+.avatar {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.identity h1 {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 0 0 4px;
+  line-height: 1.2;
+}
+
+.identity p {
+  margin: 0;
+  font-size: 0.95rem;
+  color: #b7c2c9;
+}
+
+.sidebar nav ul,
+.sidebar .contact-list,
+.sidebar .skill-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.sidebar h2 {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: #7d8b93;
+  margin: 0 0 12px;
+}
+
+.sidebar section + section {
+  margin-top: 32px;
+}
+
+.sidebar nav a {
+  display: block;
+  padding: 6px 0;
+  color: var(--paper);
+  text-decoration: none;
+  font-size: 0.95rem;
+}
+
+.sidebar nav a:hover,
+.sidebar nav a:focus-visible {
+  color: #e8a688;
+}
+
+.contact-list li {
+  font-size: 0.9rem;
+  padding: 5px 0;
+  border-bottom: 1px solid var(--ink-line);
+  word-break: break-word;
+}
+
+.contact-list li:last-child {
+  border-bottom: none;
+}
+
+.contact-list a {
+  color: var(--paper);
+}
+
+.contact-list a:hover,
+.contact-list a:focus-visible {
+  color: #e8a688;
+}
+
+.skill-list li {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  padding: 3px 0;
+  color: #dfe4e1;
+}
+
+main {
+  padding: 56px 56px 40px;
+}
+
+main section {
+  max-width: 68ch;
+}
+
+main section + section {
+  margin-top: 48px;
+}
+
+main h2 {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 0 0 16px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--paper-line);
+}
+
+main h3 {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 1.05rem;
+  margin: 20px 0 4px;
+}
+
+main p {
+  margin: 0 0 12px;
+}
+
+.project {
+  margin-bottom: 20px;
+}
+
+.project a {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+}
+
+pre {
+  background: var(--paper-dim);
+  border: 1px solid var(--paper-line);
+  border-radius: 4px;
+  padding: 16px 18px;
+  overflow-x: auto;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  line-height: 1.6;
+}
+
+footer {
+  grid-column: 1 / -1;
+  border-top: 1px solid var(--paper-line);
+  padding: 24px 56px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  font-size: 0.85rem;
+  color: #4a5964;
+}
+
+footer .course-badge {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  color: #4a5964;
+}
+
+footer .course-badge:hover,
+footer .course-badge:focus-visible {
+  color: var(--teal);
+}
+
+footer svg {
+  width: 20px;
+  height: 20px;
+}
+
+@media (max-width: 760px) {
+  .page {
+    grid-template-columns: 1fr;
+  }
+
+  .sidebar {
+    padding: 32px 24px;
+  }
+
+  main {
+    padding: 40px 24px;
+  }
+
+  footer {
+    padding: 20px 24px;
+    justify-content: flex-start;
+  }
+}
