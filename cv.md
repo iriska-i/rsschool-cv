@@ -48,3 +48,13 @@ class SolverBFS(BazowySolver):
                     kolejka.append(((nw, nk), sciezka + [(nw, nk)]))
         return []
 ```
+
+## Education
+
+- **05.2023** — High School of New Information Technologies (secondary education)
+- **10.2023 – present** — University of Information Technology and Management in Rzeszów — Software Engineering (Engineer's degree)
+
+## Certificates
+
+- CCNA: Introduction to Networks / Switching, Routing, and Wireless Essentials — Cisco Networking Academy
+- NDG Linux Essentials / Linux Unhatched — Cisco Networking Academy & Network Development Group
