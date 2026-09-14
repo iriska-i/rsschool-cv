@@ -19,3 +19,32 @@ I'm studying Software Engineering at the University of Information Technology an
 - Databases: PostgreSQL
 - Tools & environments: Git, Visual Studio, VS Code, GitHub
 - Methodologies: Agile / Scrum
+
+## Code example
+
+BFS pathfinding solver from a maze-generator project — finds the shortest
+path through a randomly generated maze stored as a grid, using a queue-based
+breadth-first search.
+
+```python
+class SolverBFS(BazowySolver):
+    def rozwiaz(self, siatka, start, koniec):
+        kolejka = deque()
+        kolejka.append((start, [start]))
+        odwiedzone = set()
+        odwiedzone.add(start)
+
+        while kolejka:
+            (wiersz, kol), sciezka = kolejka.popleft()
+            if (wiersz, kol) == koniec:
+                return sciezka
+            for dw, dk in [(-1, 0), (1, 0), (0, -1), (0, 1)]:
+                nw, nk = wiersz + dw, kol + dk
+                if (0 <= nw < len(siatka) and
+                        0 <= nk < len(siatka[0]) and
+                        siatka[nw][nk] == 0 and
+                        (nw, nk) not in odwiedzone):
+                    odwiedzone.add((nw, nk))
+                    kolejka.append(((nw, nk), sciezka + [(nw, nk)]))
+        return []
+```
