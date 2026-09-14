@@ -2,9 +2,135 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Yelyzaveta Holovatiuk — CV</title>
+  <meta name="description" content="CV of Yelyzaveta Holovatiuk, Computer Science student">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <div class="page">
+    <header class="sidebar">
+      <div class="identity">
+        <img class="avatar" src="avatar.svg" alt="Portrait of Yelyzaveta Holovatiuk">
+        <div>
+          <h1>Yelyzaveta Holovatiuk</h1>
+          <p>Computer Science student</p>
+        </div>
+      </div>
 
+      <nav aria-label="Page sections">
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#code">Code example</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#education">Education</a></li>
+          <li><a href="#languages">Languages</a></li>
+        </ul>
+      </nav>
+
+      <section aria-labelledby="contact-heading">
+        <h2 id="contact-heading">Contact</h2>
+        <ul class="contact-list">
+          <li><a href="mailto:mango.mango14uuu@gmail.com">mango.mango14uuu@gmail.com</a></li>
+          <li><a href="https://github.com/iriska-i">github.com/iriska-i</a></li>
+          <li>Discord: iriska_01044</li>
+          <li>Poland</li>
+        </ul>
+      </section>
+
+      <section id="skills" aria-labelledby="skills-heading">
+        <h2 id="skills-heading">Skills</h2>
+        <ul class="skill-list">
+          <li>Python</li>
+          <li>C#</li>
+          <li>JavaScript (basic)</li>
+          <li>PostgreSQL</li>
+          <li>Git &amp; GitHub</li>
+          <li>Visual Studio / VS Code</li>
+          <li>Agile / Scrum</li>
+        </ul>
+      </section>
+    </header>
+
+    <main>
+      <section id="about" aria-labelledby="about-heading">
+        <h2 id="about-heading">About</h2>
+        <p>
+          I'm studying Software Engineering at the University of Information
+          Technology and Management in Rzeszów since October 2023. Before
+          that I finished a high school specializing in new information
+          technologies, along with Cisco Networking Academy courses (CCNA
+          and Linux Essentials). I'm currently learning Python, C#, and
+          JavaScript, including through the RS School course.
+        </p>
+        <p>
+          Looking for a first professional experience — an internship,
+          apprenticeship, or a project where I can actually learn by doing.
+        </p>
+      </section>
+
+      <section id="code" aria-labelledby="code-heading">
+        <h2 id="code-heading">Code example</h2>
+        <p>
+          BFS pathfinding solver from a maze-generator project — finds the
+          shortest path through a randomly generated maze stored as a grid,
+          using a queue-based breadth-first search.
+        </p>
+        <pre><code>class SolverBFS(BazowySolver):
+    def rozwiaz(self, siatka, start, koniec):
+        kolejka = deque()
+        kolejka.append((start, [start]))
+        odwiedzone = set()
+        odwiedzone.add(start)
+
+        while kolejka:
+            (wiersz, kol), sciezka = kolejka.popleft()
+            if (wiersz, kol) == koniec:
+                return sciezka
+            for dw, dk in [(-1, 0), (1, 0), (0, -1), (0, 1)]:
+                nw, nk = wiersz + dw, kol + dk
+                if (0 &lt;= nw &lt; len(siatka) and
+                        0 &lt;= nk &lt; len(siatka[0]) and
+                        siatka[nw][nk] == 0 and
+                        (nw, nk) not in odwiedzone):
+                    odwiedzone.add((nw, nk))
+                    kolejka.append(((nw, nk), sciezka + [(nw, nk)]))
+        return []</code></pre>
+      </section>
+
+      <section id="experience" aria-labelledby="experience-heading">
+        <h2 id="experience-heading">Experience &amp; projects</h2>
+        <div class="project">
+          <h3>rsschool-cv</h3>
+          <p>This CV itself: written in Markdown, then coded by hand in semantic HTML/CSS and deployed with GitHub Pages as part of the RS School course.</p>
+          <a href="https://github.com/iriska-i/rsschool-cv">github.com/iriska-i/rsschool-cv</a>
+        </div>
+      </section>
+
+      <section id="education" aria-labelledby="education-heading">
+        <h2 id="education-heading">Education &amp; certificates</h2>
+        <p><strong>05.2023</strong> — High School of New Information Technologies (secondary education)</p>
+        <p><strong>10.2023 – present</strong> — University of Information Technology and Management in Rzeszów — Software Engineering (Engineer's degree)</p>
+        <p><strong>Certificates:</strong> CCNA (Cisco Networking Academy), NDG Linux Essentials</p>
+      </section>
+
+      <section id="languages" aria-labelledby="languages-heading">
+        <h2 id="languages-heading">Languages</h2>
+        <p>Ukrainian — native · Polish — intermediate (B1) · English — basic (A2) · Russian — advanced (C1)</p>
+      </section>
+    </main>
+
+    <footer>
+      <span>&copy; 2026 Yelyzaveta Holovatiuk · <a href="https://github.com/iriska-i">GitHub</a></span>
+      <a class="course-badge" href="https://rs.school/" aria-label="RS School course page">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <rect x="1" y="1" width="22" height="22" rx="3" stroke="currentColor" stroke-width="1.5"/>
+          <path d="M7 16V8l5 5 5-5v8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        RS School
+      </a>
+    </footer>
+  </div>
 </body>
 </html>
